@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models\Classes;
+
+
+use App\Models\Traits\Modifier;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class BaseModel extends Model
+{
+    use SoftDeletes;
+    use Modifier;
+
+    protected $guarded = [
+        'created_user_id',
+        'updated_user_id',
+        'deleted_user_id'
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
+}

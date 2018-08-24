@@ -1,0 +1,432 @@
+html{
+    height:100%;
+}
+body {
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+#wrapper{
+    width: 100%;
+    height: auto !important;/*ie用*/
+    min-height: 100%;
+    position: relative;
+    margin:-20px auto -50px;/* 一番上のボーダー分Topのマージン取得 */
+}
+/*文字色*/
+.form-control{
+    color: black;
+}
+
+/*プレースホルダー色*/
+.placeholder {
+    color: #999;
+}
+
+/*改行禁止*/
+.nowrap {
+    white-space: nowrap;
+}
+/*********************************************
+ * ヘッダ
+ *********************************************/
+.navbar-origin {
+  background-color: #27577e;
+  height: 80px;
+  margin-bottom: 0px;
+}
+.navbar-brand, .navbar-brand:hover, .navbar-brand:visited, .navbar-brand:link, .navbar-brand:active {
+  color: #fff;
+}
+
+.navbar-info {
+  color: #fff;
+  margin-top: 15px
+}
+
+/*********************************************
+ * コンテナ
+ *********************************************/
+.container {
+  width: 1200px;
+  position: relative;
+  height: auto !important;
+  min-height: 77%;
+}
+
+/*********************************************
+ * サイドメニュー
+ *********************************************/
+.side-menu {
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #e3eae9;
+  width: 200px;
+}
+
+
+/*********************************************
+ * メインコンテンツ
+ *********************************************/
+/*.list-menu{
+  width: 1600px;
+  margin-left: -14em;
+}
+*/
+.main-contests {
+  background-color: #fff;
+  padding-bottom: 50px;
+  min-height: 500px;
+  padding-left: 15px;
+  padding-right: 15px;
+  word-break: break-all;
+  width: 100%;
+  /*max-width: 100%;*/
+}
+
+.error-contests {
+  padding-top: 50px;
+}
+
+/*********************************************
+ * フッタ
+ *********************************************/
+.page-footer {
+  margin-top: 40px;
+}
+
+.footer {
+  height: 50px;
+  padding-top: 15px;
+  background-color: #c4d2d0;
+  position: absolute;
+  width: 100%;
+}
+
+
+/*********************************************
+ * 入力系
+ *********************************************/
+.input-lable {
+  width:160px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+}
+.required-lable  {
+  width:35px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.input-group-add {
+  width:100%;
+}
+
+.form-control-height-max {
+  min-height:28px;
+  height:100%;
+  word-break: break-all;
+}
+
+
+/*********************************************
+ * ログイン
+ *********************************************/
+
+.login-form {
+    margin-top: 40px;
+}
+
+/*********************************************
+ * メニュー
+ *********************************************/
+.navbar-menu {
+  width: 100%;
+}
+
+.navbar .container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+
+.navbar .nav {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  width: 750px;
+}
+
+.navbar .nav active {
+  background-color: #27577e;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+.navbar .nav li {
+ display: table-cell;
+ float: none;
+ width:200px;
+}
+
+.navbar .nav li a {
+ font-weight: bold;
+ text-align: center;
+}
+/*--dropdown--*/
+.navbar .nav li ul.dropdown-menu li {
+  float: left;
+  width: 250px;
+}
+
+.navbar .nav li ul.dropdown-menu li a{
+  text-align: left;
+}
+/*--end-dropdown--*/
+
+textarea {
+    resize: none;
+}
+
+
+/*********************************************
+ * その他
+ *********************************************/
+.hide {
+	display: none;
+}
+
+ul.taglist {
+width:600px;
+}
+
+ul.taglist li {
+    width:600px;
+	margin: 5px;
+	float: left;
+	list-style: none;
+}
+
+ul.taglist li span {
+    display:inline-block;
+    width:150px;
+}
+
+ul.category li {
+	list-style: none;
+}
+
+.text-width-150{
+    width:150px;
+}
+
+.text-width-100{
+    width:100px;
+}
+
+.date-width{
+    width:90px;
+}
+
+.status-width{
+    width:80px;
+}
+
+.text-word-break{
+word-break: break-all;
+}
+
+.text-hint {
+    color: #999;
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+/*hieu-start*/
+input.form-child {
+    position: relative;
+    width: 70%;
+    margin-bottom: 0;
+    margin: 3px 10px;
+}
+
+span.lable-child {padding-right: 10px;}
+
+.bg-right-table {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+span.row-bt {
+    margin-top: 30px;
+}
+
+.header-table {
+}
+
+.table-list-adress {
+    padding-left: 24px;
+}
+
+.content-adress-list {
+    padding-left: 100px;
+}
+
+.btn-like-wight{
+ width: 120px;
+}
+
+.bg-right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 40px;
+}
+
+.bg-left{
+  padding: 10px
+}
+
+.tbl-child-left {
+    float: left;
+    text-align: left;
+    width: 14%;
+}
+
+.tbl-child-right {
+    text-align: left;
+    width: auto;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 2px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+span.input-group-addon {
+
+}
+
+.paging {
+    text-align: center;
+}
+/* hieu-end */
+#myInput{
+  background-image: url('/images/searchicon.png');
+  background-position: 10px 5px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px 20px 5px 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  width: 100%;
+  border-bottom-right-radius: 0em;
+  border-top-right-radius: 0em;
+}
+#dropdown-search {
+  height: 30px;
+  padding-top: 4px;
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  width: 165px;
+}
+#playerId {
+    font-size: 14px;
+    height: 30px;
+    padding: 10px 10px 12px 9px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    width: 100%;
+    border-bottom-right-radius: 0em;
+    border-top-right-radius: 0em;
+}
+#filterStatus {
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  border-top-left-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+}
+#filterCategory {
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  border-top-left-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+}
+.text-danger label.error {
+  font-weight: normal;
+}
+/*align-image*/
+#text_id p img.fr-dib {
+    margin: auto;
+    display: block;
+    float: none;
+    vertical-align: top;
+}
+#text_id p img.fr-fic.fr-dib.fr-fir {
+    float: right;
+}
+#text_id p img.fr-dib.fr-fil {
+    float: left;
+}
+
+.ml-945{
+	margin-left: 945px;
+}
+
+.f-left{
+	float: left;
+}
+
+.f-right{
+	float: right;
+}
+
+.p-l-0{
+    padding-left: 0px!important;
+}
+.navbar{
+    min-height: 0;
+}
+.logout-btn{
+    margin-left: 20px;
+}
+.text-right{
+    display: flex;
+}
+.span-right{
+    margin-top: 10px;
+    margin-right: 25px;
+    float: left;
+}
+.div-middle{
+    margin-right: 5px;
+}
+.btn-create{
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
