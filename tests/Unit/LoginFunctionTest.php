@@ -39,16 +39,18 @@ class LoginFunctionTest extends TestCase
 
     public function loginForTest()
     {
-        $admin = ManageUser::first();
+        $admin = ManageUser::where('email', 'test@dac.co.jp')->first();
         $this->actingAs($admin);
     }
 
     public function testIndex()
     {
+        $this->getMock();
         $this->loginForTest();
         $response = $this->call('GET','/user');
         $this->seeIsAuthenticated();
         $this->assertEquals(200, $response->getStatusCode());
+        $this->deleteMock();
     }
 
     public function testHttpUser()
