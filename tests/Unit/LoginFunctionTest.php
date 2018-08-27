@@ -31,12 +31,22 @@ class LoginFunctionTest extends TestCase
      *
      * @return void
      */
-    public function testDoesNotLoginAnInvalidUser()
+    public function testDoesNotLoginAnInvalidPass()
     {
         $user = factory(ManageUser::class)->create();
         $response = $this->call('POST','/login', [
             'email' => $user->email,
             'password' => 'invalid'
+        ]);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->dontSeeIsAuthenticated();
+    }
+
+    public function testDoesNotLoginAnInvalidUser()
+    {
+        $response = $this->call('POST','/login', [
+            'email' => 'invalid@gmail.com',
+            'password' => 'secret'
         ]);
         $this->assertEquals(302, $response->getStatusCode());
         $this->dontSeeIsAuthenticated();

@@ -52,12 +52,22 @@ class LoginFunction2Test extends TestCase
         $this->dontSeeIsAuthenticated();
     }
 
-    public function testLoginFailWithInvalidUser()
+    public function testLoginFailWithInvalidPass()
     {
         $admin = ManageUser::where('email', 'test@dac.co.jp')->first();
         $response = $this->call('POST','/login', [
             'email' => $admin->email,
             'password' => 'invalid'
+        ]);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->dontSeeIsAuthenticated();
+    }
+
+    public function testLoginFailWithInvalidUser()
+    {
+        $response = $this->call('POST','/login', [
+            'email' => 'invalid@gmail.com',
+            'password' => 'secret'
         ]);
         $this->assertEquals(302, $response->getStatusCode());
         $this->dontSeeIsAuthenticated();
