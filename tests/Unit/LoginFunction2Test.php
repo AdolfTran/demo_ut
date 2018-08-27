@@ -46,7 +46,7 @@ class LoginFunction2Test extends TestCase
         $admin = ManageUser::where('email', 'test@dac.co.jp')->first();
         $response = $this->call('POST','/login', [
             'email' => $admin->email,
-            'password' => ''
+            'password' => null,
         ]);
         $this->assertEquals(302, $response->getStatusCode());
         $this->dontSeeIsAuthenticated();
