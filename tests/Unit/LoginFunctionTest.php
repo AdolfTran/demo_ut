@@ -5,11 +5,13 @@ namespace Tests\Unit;
 use App\Services\DemoService;
 use App\Models\ManageUser;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 
 class LoginFunctionTest extends TestCase
 {
     use DatabaseTransactions;
+    use WithoutMiddleware; // use this trait
 
     private $users;
 
@@ -43,24 +45,73 @@ class LoginFunctionTest extends TestCase
         $this->actingAs($admin);
     }
 
-    public function testIndex()
+    public function testLoginSuccess()
     {
         $this->getMock();
-        $this->loginForTest();
+        $admin = ManageUser::where('email', 'test@dac.co.jp')->first();
+        $this->actingAs($admin);
         $response = $this->call('GET','/user');
         $this->seeIsAuthenticated();
         $this->assertEquals(200, $response->getStatusCode());
         $this->deleteMock();
     }
 
-    public function testHttpUser()
+    public function testLoginFailWithoutPass()
     {
         $this->getMock();
-        $this->loginForTest();
-        $response = $this->call('GET','/user');
-        $this->assertEquals(200, $response->getStatusCode());
+        $admin = ManageUser::where('email', 'test@dac.co.jp')->first();
+        $response = $this->call('POST','/login', [
+            'email' => $admin->email,
+            'password' => ''
+        ]);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->dontSeeIsAuthenticated();
         $this->deleteMock();
     }
+
+    public function testLoginFailWithInvalidUser()
+    {
+        $this->getMock();
+        $admin = ManageUser::where('email', 'test@dac.co.jp')->first();
+        $response = $this->call('POST','/login', [
+            'email' => $admin->email,
+            'password' => 'invalid'
+        ]);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->dontSeeIsAuthenticated();
+        $this->deleteMock();
+    }
+    /**
+     * An user without pass cannot be logged in.
+     *
+     * @return void
+     */
+    public function testDoesNotLoginWithoutPassword()
+    {
+        $user = factory(ManageUser::class)->create();
+        $response = $this->call('POST','/login', [
+            'email' => $user->email,
+            'password' => ''
+        ]);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->dontSeeIsAuthenticated();
+    }
+    /**
+     * An invalid user cannot be logged in.
+     *
+     * @return void
+     */
+    public function testDoesNotLoginAnInvalidUser()
+    {
+        $user = factory(ManageUser::class)->create();
+        $response = $this->call('POST','/login', [
+            'email' => $user->email,
+            'password' => 'invalid'
+        ]);
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->dontSeeIsAuthenticated();
+    }
+
 
     /**
      *
