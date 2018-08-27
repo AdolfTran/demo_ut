@@ -1,6 +1,6 @@
 
 
-[![Travis](https://travis-ci.org/AdolfTran/demo_ut.svg?branch=master)](https://travis-ci.org/AdolfTran/demo_ut.svg?branch=master)
+[![Travis](https://travis-ci.org/AdolfTran/demo_ut.svg?branch=master)](https://travis-ci.org/AdolfTran/demo_ut)
 
 ## Installation
 1. Run `touch .env`
